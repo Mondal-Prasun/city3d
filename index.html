@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Some Navigation Animation</title>
+</head>
+
+<body>
+
+    <iframe id="city" src="https://my.spline.design/3dcitynavigationcopy-78a5326874435a5b665b6111aa66396e/"
+        frameborder="0" title="3D City">
+
+    </iframe>
+
+</body>
+<style>
+    body {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: black;
+    }
+</style>
+
+
+<script>
+
+    const city = document.getElementById("city")
+
+
+
+    function setCityToFullScreen() {
+
+
+        city.style.height = window.innerHeight.toString() + "px";
+        city.style.width = window.innerWidth.toString() + "px";
+
+
+    }
+
+    setCityToFullScreen();
+
+    function reloadCity() {
+        city.src = city.src
+    }
+
+    window.onload = function () {
+        setCityToFullScreen()
+        setInterval(() => {
+            reloadCity()
+        }, 1000 * 35);
+
+    };
+
+    window.onresize = setCityToFullScreen;
+
+
+
+</script>
+
+</html>
